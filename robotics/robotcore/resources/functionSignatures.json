@@ -1,0 +1,70 @@
+{
+"plotTransforms":
+{
+   "inputs":
+   [
+        {"name":"translations", "kind":"required", "type":["numeric", "2d", "ncols=3"]},
+        {"name":"rotations", "kind":"required", "type":[["quaternion", "column"], ["numeric", "2d", "ncols=4"]]},
+        {"name":"MeshFilePath", "kind":"namevalue", "type":[["file=*.stl"], ["matlabpathfile=*.stl"]]},
+        {"name":"FrameSize", "kind":"namevalue", "type":["double", "scalar", "positive"]},
+        {"name":"MeshColor", "kind":"namevalue", "type":[["double", "vector", "numel=3"], ["string"]]},
+        {"name":"Parent", "kind":"namevalue", "type":["matlab.graphics.axis.Axes"]},
+        {"name":"InertialZDirection", "kind":"namevalue", "type":["choices={'Up', 'Down'}"]},
+        {"name":"View", "kind":"namevalue", "type":[["double", "vector", "numel=2"], ["choices={'2D', '3D'}"]]}
+   ]
+},
+    "cubicpolytraj": 
+{
+    "inputs":
+    [
+        {"name":"wayPoints", "kind":"required", "type":["numeric", "2d"]},
+        {"name":"timePoints", "kind":"required", "type":["numeric", "row"]},
+        {"name":"t", "kind":"required", "type":["numeric", "row"]},
+		{"name":"VelocityBoundaryCondition", "kind":"namevalue", "type":["numeric", "2d"]}
+    ]
+},
+    "quinticpolytraj": 
+{
+    "inputs":
+    [
+        {"name":"wayPoints", "kind":"required", "type":["numeric", "2d"]},
+        {"name":"timePoints", "kind":"required", "type":["numeric", "row"]},
+        {"name":"t", "kind":"required", "type":["numeric", "row"]},
+		{"name":"VelocityBoundaryCondition", "kind":"namevalue", "type":["numeric", "2d"]},
+		{"name":"AccelerationBoundaryCondition", "kind":"namevalue", "type":["numeric", "2d"]}
+    ]
+},
+    "trapveltraj": 
+{
+    "inputs":
+    [
+        {"name":"wayPoints", "kind":"required", "type":["numeric", "2d"]},
+        {"name":"numSamples", "kind":"required", "type":["numeric", "scalar"]},
+		{"name":"PeakVelocity", "kind":"namevalue", "type":["numeric", "2d"]},
+		{"name":"EndTime", "kind":"namevalue", "type":["numeric", "2d"]},
+		{"name":"AccelTime", "kind":"namevalue", "type":["numeric", "2d"]},
+		{"name":"Acceleration", "kind":"namevalue", "type":["numeric", "2d"]}
+    ]
+},
+    "rottraj": 
+{
+    "inputs":
+    [
+        {"name":"R0", "kind":"required", "type":[["numeric", "2d"], ["quaternion"]]},
+        {"name":"RF", "kind":"required", "type":[["numeric", "2d"], ["quaternion"]]},
+        {"name":"t", "kind":"required", "type":["numeric", "row"]},
+		{"name":"TimeScaling", "kind":"namevalue", "type":["numeric", "2d", "nrows=3"]}
+    ]
+},
+    "transformtraj": 
+{
+    "inputs":
+    [
+        {"name":"T0", "kind":"required", "type":["numeric", "ncols=4", "nrows=4"]},
+        {"name":"TF", "kind":"required", "type":["numeric", "ncols=4", "nrows=4"]},
+        {"name":"t", "kind":"required", "type":["numeric", "row"]},
+		{"name":"TimeScaling", "kind":"namevalue", "type":["numeric", "2d", "nrows=3"]}
+    ]
+}
+
+}

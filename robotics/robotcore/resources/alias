@@ -1,0 +1,7 @@
+% Copyright 2019 The MathWorks, Inc.
+aliasdef
+    classalias
+        % Aliases for functionality that is shared between toolboxes
+        robotics.Rate -> rateControl;
+    end
+end

@@ -1,0 +1,9 @@
+function Normal=Gaitcycle_Normal(VT,ML,AP)
+[N,~]=size(VT);
+div= N/101;
+x = 0:(N-1);  
+xq1 = 0:div:(N-1);
+Normal_VT = spline(x,VT,xq1);
+Normal_ML = spline(x,ML,xq1);
+Normal_AP = spline(x,AP,xq1);
+Normal = struct ('VT',Normal_VT,'ML',Normal_ML,'AP',Normal_AP);
